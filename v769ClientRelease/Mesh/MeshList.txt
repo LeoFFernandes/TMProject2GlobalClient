@@ -1782,3 +1782,30 @@
 2945 mesh\\aandbsword01.msa
 2946 mesh\\aandbaxe01.msa
 2947 mesh\\aandshield01.msa
+
+
+2948 mesh\\aandaxe02.msa
+2949 mesh\\aandbow02.msa
+2950 mesh\\aandclaw02.msa
+2951 mesh\\aandspear02.msa
+2952 mesh\\aandsword02.msa
+2953 mesh\\aandthrow02.msa
+2954 mesh\\aandwand02.msa
+2955 mesh\\aandbwand02.msa
+2956 mesh\\aandbsword02.msa
+2957 mesh\\aandbaxe02.msa
+2958 mesh\\aandshield02.msa
+
+2959 mesh\\aandaxe03.msa
+2960 mesh\\aandbow03.msa
+2961 mesh\\aandclaw03.msa
+2962 mesh\\aandspear03.msa
+2963 mesh\\aandsword03.msa
+2964 mesh\\aandthrow03.msa
+2965 mesh\\aandwand03.msa
+2966 mesh\\aandbwand03.msa
+2967 mesh\\aandbsword03.msa
+2968 mesh\\aandbaxe03.msa
+2969 mesh\\aandshield03.msa
+
+
