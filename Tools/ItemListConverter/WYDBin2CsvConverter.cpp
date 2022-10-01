@@ -39,6 +39,25 @@ void WYDBin2CsvConverter::Read()
 	}
 
 	stream2.close();
+
+
+	std::fstream st{ "ItemName.bin", std::ios::in | std::ios::binary };
+	if (st.is_open())
+	{
+		while (st.read(reinterpret_cast<char*>(&buff), 68))
+		{
+			for (int j = 4, k = 0; j < 64; j++, k++)
+				buff[j] -= (k);
+
+			int idx = *(int*)buff;
+			if (idx > 0 && idx < 6500)
+			{
+				strcpy_s(_extraitem[idx].Name, &buff[4]);
+				strcpy_s(_itemList[idx].Name, &buff[4]);
+			}
+		}
+		st.close();
+	}
 }
 
 
