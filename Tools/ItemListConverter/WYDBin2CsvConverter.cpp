@@ -52,7 +52,8 @@ void WYDBin2CsvConverter::Read()
 			int idx = *(int*)buff;
 			if (idx > 0 && idx < 6500)
 			{
-				strcpy_s(_extraitem[idx].Name, &buff[4]);
+				if (_extraitem[idx].Name[0])
+					strcpy_s(_extraitem[idx].Name, &buff[4]);
 				strcpy_s(_itemList[idx].Name, &buff[4]);
 			}
 		}
