@@ -100,6 +100,7 @@
     <ClCompile Include="WYDMountVCsv2BinConverter.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Structs.h" />
     <ClInclude Include="WYDBin2CsvConverter.h" />
     <ClInclude Include="WYDConverter.h" />
     <ClInclude Include="WYDCsv2BinConverter.h" />
