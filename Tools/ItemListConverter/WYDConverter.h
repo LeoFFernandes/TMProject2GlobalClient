@@ -63,6 +63,23 @@ struct STRUCT_MOUNTDATA
 };
 #pragma pack(pop)
  
+
+#pragma pack(push, 1)
+struct STRUCT_MOUNTDATAV
+{
+	short BoneAniIndex;
+	struct
+	{
+		short m1;
+		short m2;
+		short m3;
+	}Mesh[3]; 
+	float Scale;
+	short Unk[2];
+};
+//int eee = sizeof STRUCT_MOUNTDATAV;
+#pragma pack(pop)
+
 //int eee = sizeof STRUCT_MOUNTDATA;
 //28668
  
@@ -81,8 +98,10 @@ protected:
 	std::map<std::string, int> _effects;
 	std::array<std::string, 6500> _itemName;
 	std::array<STRUCT_ITEMLIST, 6500> _itemList;
+	std::array<int, 6500> _itemicon;
 	std::array<STRUCT_ITEMLIST, 6500> _extraitem;
 	std::array<STRUCT_MOUNTDATA, 400> _mountdata;
+	std::array<STRUCT_MOUNTDATAV, 400> _mountdatav;
 	virtual void Read() = 0;
  
 public:

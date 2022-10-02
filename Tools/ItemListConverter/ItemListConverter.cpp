@@ -10,6 +10,8 @@
 #include "WYDBin2CsvConverter.h"
 #include "WYDMountBin2CsvConverter.h"
 #include "WYDMountCsv2BinConverter.h"
+#include "WYDMountVBin2CsvConverter.h"
+#include "WYDMountVCsv2BinConverter.h"
 
 int main(int argc, char* argv[])
 {
@@ -33,6 +35,10 @@ int main(int argc, char* argv[])
 			converter = std::make_unique<WYDMountBin2CsvConverter>();
 		else if (command == "mountdata_csv2bin")
 			converter = std::make_unique<WYDMountCsv2BinConverter>();
+		else if (command == "mountdatav_bin2csv")
+			converter = std::make_unique<WYDMountVBin2CsvConverter>();
+		else if (command == "mountdatav_csv2bin")
+			converter = std::make_unique<WYDMountVCsv2BinConverter>();
 
 
 		if (!(bool)converter)

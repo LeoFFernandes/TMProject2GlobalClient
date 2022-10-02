@@ -45,7 +45,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)bin\$(Platform)\$(ProjectName)\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)ItemListConverter</OutDir>
     <IntDir>$(SolutionDir)\obj\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -96,6 +96,8 @@
     <ClCompile Include="WYDCsv2BinConverter.cpp" />
     <ClCompile Include="WYDMountBin2CsvConverter.cpp" />
     <ClCompile Include="WYDMountCsv2BinConverter.cpp" />
+    <ClCompile Include="WYDMountVBin2CsvConverter.cpp" />
+    <ClCompile Include="WYDMountVCsv2BinConverter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WYDBin2CsvConverter.h" />
@@ -103,6 +105,8 @@
     <ClInclude Include="WYDCsv2BinConverter.h" />
     <ClInclude Include="WYDMountBin2CsvConverter.h" />
     <ClInclude Include="WYDMountCsv2BinConverter.h" />
+    <ClInclude Include="WYDMountVBin2CsvConverter.h" />
+    <ClInclude Include="WYDMountVCsv2BinConverter.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
