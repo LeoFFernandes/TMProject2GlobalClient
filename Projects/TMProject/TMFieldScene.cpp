@@ -16590,7 +16590,7 @@ int TMFieldScene::OnMsgBoxEvent(unsigned int idwControlID, unsigned int idwEvent
 		stApplyBonus.Header.ID = m_pMyHuman->m_dwID;
 		stApplyBonus.Header.Type = MSG_ApplyBonus_Opcode;
 		stApplyBonus.BonusType = 2;
-		stApplyBonus.Detail = m_pMessageBox->m_dwArg >> 16;
+		stApplyBonus.Detail = m_pMessageBox->m_dwArg2;
 		stApplyBonus.TargetID = m_pMessageBox->m_dwArg;
 		SendOneMessage((char*)&stApplyBonus, sizeof(stApplyBonus));
 	}
