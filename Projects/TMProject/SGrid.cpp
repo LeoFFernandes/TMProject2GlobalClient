@@ -1360,14 +1360,21 @@ void SGridControl::BuyItem(int nCellX, int nCellY)
 	}
 	else if (m_eGridType == TMEGRIDTYPE::GRID_SKILLM)
 	{
+		auto pScene = static_cast<TMFieldScene*>(g_pCurrentScene);
+
 		auto pItem = GetItem(nCellX, nCellY);
 		if (pItem)
 		{
 			char szMsg[128]{};
-			sprintf(szMsg, g_pMessageStringTable[47], g_pItemList[pItem->m_pItem->sIndex].Name);			
+			sprintf(szMsg, g_pMessageStringTable[47], g_pItemList[pItem->m_pItem->sIndex].Name);
 			g_pCurrentScene->m_pMessageBox->SetMessage(szMsg, 4, 0);
 			g_pCurrentScene->m_pMessageBox->SetVisible(1);
-			g_pCurrentScene->m_pMessageBox->m_dwArg = m_dwMerchantID | (pItem->m_pItem->sIndex << 16);
+			if (pScene->m_pGridSkillMaster && pScene->m_pGridSkillMaster->m_dwMerchantID)
+				g_pCurrentScene->m_pMessageBox->m_dwArg = pScene->m_pGridSkillMaster->m_dwMerchantID;
+			else
+				g_pCurrentScene->m_pMessageBox->m_dwArg = m_dwMerchantID;
+
+			g_pCurrentScene->m_pMessageBox->m_dwArg2 = pItem->m_pItem->sIndex;
 		}
 	}
 }

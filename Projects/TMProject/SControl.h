@@ -594,6 +594,7 @@ public:
 
 public:
     unsigned int m_dwArg;
+    unsigned int m_dwArg2;
     unsigned int m_dwMessage;
     char m_byMessageBoxType;
 
