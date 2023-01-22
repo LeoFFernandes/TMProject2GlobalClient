@@ -306,6 +306,9 @@ void CSoundManager::SetSoundVolumeByIndex(int nIndex, int nVolume)
 
 void CSoundManager::SetSoundVolume(int nVolume)
 {
+	if (!this)
+		return;
+
 	if (nVolume > 0)
 		nVolume = 0;
 
