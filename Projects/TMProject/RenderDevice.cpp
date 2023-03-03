@@ -304,7 +304,7 @@ void RenderDevice::Finalize()
 
 	m_pd3dDevice->SetGammaRamp(0, 0, &gamma);
 
-	if (m_d3dpp.Windowed)
+	if (!m_d3dpp.Windowed)
 	{
 		HDC hdc = GetDC(g_pApp->m_hWnd);
 		SetDeviceGammaRamp(hdc, &gamma);
@@ -716,11 +716,13 @@ void RenderDevice::SetSamplerState(DWORD dwStage, D3DSAMPLERSTATETYPE State, DWO
 
 void RenderDevice::SetGamma()
 {
+	printf("Bright %d" , RenderDevice::m_nBright);
 	if (RenderDevice::m_nBright != 50)
 	{
 		static D3DGAMMARAMP gamma;
 		memset(&gamma, 0, sizeof(gamma));
 
+		
 		m_pd3dDevice->GetGammaRamp(1, &gamma);
 
 		for (int i = 0; i < 256; i++)
@@ -733,10 +735,11 @@ void RenderDevice::SetGamma()
 			gamma.green[i] = nVal;
 			gamma.blue[i] = nVal;
 		}
-
+		
 		m_pd3dDevice->SetGammaRamp(0, 0, &gamma);
 
-		if (m_d3dpp.Windowed)
+		
+		if (!m_d3dpp.Windowed)
 		{
 			HDC hdc = GetDC(g_pApp->m_hWnd);
 			SetDeviceGammaRamp(hdc, &gamma);
